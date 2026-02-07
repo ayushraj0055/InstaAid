@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstaAi - Healthcare Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>InstaAid</h1>
+    <nav>
+      <button id="loginUserBtn">Login as User</button>
+      <button id="loginProviderBtn">Login as Service Provider</button>
+    </nav>
+  </header>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="loginTitle">Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button id="loginSubmit">Login</button>
+    </div>
+  </div>
+
+  <!-- Main Services -->
+  <main>
+    <section class="service" id="nurseBooking">
+      <h2>Book Nurse</h2>
+      <label>Area:
+        <input type="text" id="nurseArea" placeholder="Enter your area">
+      </label>
+      <label>Hours:
+        <input type="number" id="nurseHours" placeholder="Hours needed">
+      </label>
+      <p>Rate: ₹200/hour</p>
+      <button onclick="calculateNurseCost()">Calculate Cost</button>
+      <p id="nurseCost"></p>
+    </section>
+
+    <section class="service" id="subscriptionService">
+      <h2>Subscription Service</h2>
+      <label>Service Type:
+        <select id="serviceType">
+          <option value="day">Day Service</option>
+          <option value="night">Night Service</option>
+        </select>
+      </label>
+      <label>Number of Days:
+        <input type="number" id="subscriptionDays" placeholder="Days">
+      </label>
+      <p>Rate: ₹1000/day</p>
+      <button onclick="calculateSubscriptionCost()">Calculate Cost</button>
+      <p id="subscriptionCost"></p>
+    </section>
+
+    <section class="service" id="guidanceService">
+      <h2>Guidance</h2>
+      <p>Get professional healthcare guidance from our experts anytime.</p>
+      <button onclick="alert('A healthcare expert will contact you shortly.')">Request Guidance</button>
+    </section>
+
+    <section class="service" id="ambulanceBooking">
+      <h2>Ambulance Booking</h2>
+      <label>Distance (km):
+        <input type="number" id="ambulanceDistance" placeholder="Distance in km">
+      </label>
+      <label>Pickup Address:
+        <input type="text" id="pickupAddress" placeholder="Enter address">
+      </label>
+      <p>Rate: ₹50/km</p>
+      <button onclick="calculateAmbulanceCost()">Calculate Cost</button>
+      <p id="ambulanceCost"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 InstaAi Healthcare Services</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
